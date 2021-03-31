@@ -11,4 +11,9 @@
         android:name="pet.plants.shoppe.ShoppeFragment"
         android:label="Shoppe">
     </Fragment>
+    <Fragment
+        android:id="@+id/login_fragment"
+        android:name="pet.plants.login.LoginFragment"
+        android:label="Login">
+    </Fragment>
 </Navigation>

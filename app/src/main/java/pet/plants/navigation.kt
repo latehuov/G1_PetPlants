@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import java.security.InvalidParameterException
 
-enum class Screen { Shoppe, SignUp, SignIn, Survey }
+enum class Screen { Shoppe, Login }
 
 fun Fragment.navigate(to: Screen, from: Screen) {
     if (to == from) {
@@ -13,6 +13,9 @@ fun Fragment.navigate(to: Screen, from: Screen) {
     when (to) {
         Screen.Shoppe -> {
             findNavController().navigate(R.id.shoppe_fragment)
+        }
+        Screen.Login -> {
+            findNavController().navigate(R.id.login_fragment)
         }
     }
 }
