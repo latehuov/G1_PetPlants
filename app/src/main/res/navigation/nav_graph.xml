@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/shoppe_fragment">
+
+    <Fragment
+        android:id="@+id/shoppe_fragment"
+        android:name="pet.plants.shoppe.ShoppeFragment"
+        android:label="Shoppe">
+    </Fragment>
+</Navigation>
