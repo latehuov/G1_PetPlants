@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".RegisterActivity"
-    android:background="@color/light_green"
+    android:background="#a9c396"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
 
@@ -88,13 +88,13 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="#4CAF50"
+        android:background="#66a366"
         android:enabled="true"
         android:text="Create an account"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="20dp"
-        app:backgroundTint="#4CAF50" />
+        app:backgroundTint="#66a366" />
 
     <Button
 
@@ -105,13 +105,13 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="#4CAF50"
+        android:background="#66a366"
         android:enabled="true"
         android:text="to log In"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="20dp"
-        app:backgroundTint="#4CAF50" />
+        app:backgroundTint="#66a366" />
 
 
 </LinearLayout>
