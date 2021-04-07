@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".RegisterActivity"
     android:background="@color/light_green"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
@@ -16,7 +16,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
         android:gravity="center"
-        android:text="Log In"
+        android:text="Register"
         android:textColor="@color/black"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -40,16 +40,30 @@
 
     <EditText
 
-        android:id="@+id/password"
+    android:id="@+id/password"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/email"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="11dp"
+    android:layout_marginRight="20dp"
+    android:drawablePadding="10dp"
+    android:paddingBottom="20dp"
+    android:hint="@string/password"
+    android:inputType="textPassword" />
+
+    <EditText
+
+        android:id="@+id/repeat_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
+        android:layout_below="@+id/password"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="11dp"
         android:layout_marginRight="20dp"
         android:drawablePadding="10dp"
         android:paddingBottom="20dp"
-        android:hint="@string/password"
+        android:hint="@string/repeat_password"
         android:inputType="textPassword" />
 
     <TextView
@@ -60,28 +74,10 @@
         android:layout_below="@+id/password"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
-        android:text="@string/forgot_password"
+        android:text="Forgot Password"
 
         android:textColor="@color/black"
         android:textSize="15dp" />
-
-    <Button
-
-        android:id="@+id/login_button"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/register_button"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:background="#4CAF50"
-        android:enabled="true"
-        android:text="Log In"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        app:backgroundTint="#4CAF50" />
-
 
     <Button
 
@@ -99,5 +95,23 @@
         android:textColor="#000000"
         android:textSize="20dp"
         app:backgroundTint="#4CAF50" />
+
+    <Button
+
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/register_button"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="#4CAF50"
+        android:enabled="true"
+        android:text="to log In"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:backgroundTint="#4CAF50" />
+
 
 </LinearLayout>
