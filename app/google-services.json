@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "653306785492",
+    "firebase_url": "https://g1-petplants-default-rtdb.firebaseio.com",
+    "project_id": "g1-petplants",
+    "storage_bucket": "g1-petplants.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653306785492:android:d1a85c0f9d1cd4f3555541",
+        "android_client_info": {
+          "package_name": "pet.plants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653306785492-c7iobgqs7ks64tqricdftuf96h4lenfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxOckLmK4N6jDfcE6ItJDVt3_YlNP-m5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653306785492-c7iobgqs7ks64tqricdftuf96h4lenfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
