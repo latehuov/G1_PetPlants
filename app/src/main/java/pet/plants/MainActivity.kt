@@ -41,18 +41,23 @@ class MainActivity : AppCompatActivity() {
     fun login(){
        var email = uname.text.toString()
         var password = pass.text.toString()
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) {task ->
-                if(task.isSuccessful){
-                    currentUser = auth.currentUser
-                    val intent = Intent(this, LoggedInActivity::class.java)
-                    startActivity(intent)
-                }
-                else {
-                    Toast.makeText(baseContext, "Oopsie!",
+        if(email.isNotEmpty() && password.isNotEmpty()) {
+            auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            currentUser = auth.currentUser
+                            val intent = Intent(this, LoggedInActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(baseContext, "Oopsie!",
+                                    Toast.LENGTH_SHORT).show()
+                        }
+                    }
+        }
+        else{
+            Toast.makeText(baseContext, "email or password is empty!",
                     Toast.LENGTH_SHORT).show()
-                }
-            }
+        }
 
 
     }
