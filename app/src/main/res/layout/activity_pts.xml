@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7c98b3"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    tools:context=".pts_activity">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+
+        android:background="@drawable/not_so_round"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Ask for help!"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/black" />
+
+
+
+        <Button
+
+            android:id="@+id/upload"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/forgot_password"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/kinda_round"
+            android:enabled="true"
+            android:text="Send the image"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            app:backgroundTint="#66a366" />
+
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:id="@+id/imageviv"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/diagnosis"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
