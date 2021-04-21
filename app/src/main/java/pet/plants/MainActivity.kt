@@ -18,6 +18,10 @@ import android.content.Intent
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import android.widget.Toolbar
+import androidx.appcompat.app.ActionBar
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -28,10 +32,13 @@ private lateinit var uname: EditText
 private lateinit var pass: EditText
 private lateinit var auth: FirebaseAuth
 private var currentUser: FirebaseUser? = null
+    lateinit var toolbar : ActionBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        toolbar = supportActionBar!!
+        val bottomnav :BottomNavigationView = findViewById(R.id.navigationView)
 
         auth = Firebase.auth
         uname = findViewById(R.id.email)
