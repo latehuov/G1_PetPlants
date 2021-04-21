@@ -8,22 +8,24 @@
     android:gravity="center"
     android:orientation="vertical"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="500dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="50dp"
 
         android:background="@drawable/not_so_round"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="00dp"
             android:gravity="center"
-            android:text="Log In"
+            android:text="Register"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/black" />
 
@@ -34,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar_login"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:drawablePadding="10dp"
             android:hint="Email"
@@ -59,6 +61,20 @@
             android:inputType="textPassword"
             android:paddingBottom="20dp" />
 
+        <EditText
+
+            android:id="@+id/repeat_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="20dp"
+            android:drawablePadding="10dp"
+            android:hint="@string/repeat_password"
+            android:inputType="textPassword"
+            android:paddingBottom="20dp" />
+
         <TextView
 
             android:id="@+id/forgot_password"
@@ -67,29 +83,10 @@
             android:layout_below="@+id/password"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="25dp"
-            android:text="@string/forgot_password"
+            android:text="Forgot Password"
 
             android:textColor="@color/black"
             android:textSize="15dp" />
-
-        <Button
-
-            android:id="@+id/login_button"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/register_button"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/kinda_round"
-            android:enabled="true"
-            android:text="Log In"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="20dp"
-
-            app:backgroundTint="#66a366" />
-
 
         <Button
 
@@ -107,6 +104,24 @@
             android:textColor="#000000"
             android:textSize="20dp"
             app:backgroundTint="#66a366" />
+
+        <Button
+
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/register_button"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/kinda_round"
+            android:enabled="true"
+            android:text="to log In"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            app:backgroundTint="#66a366" />
     </LinearLayout>
+
 
 </LinearLayout>
