@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainDiv"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:layout_marginBottom="50dp"
+    android:elevation="10dp"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp"
-    android:elevation="10dp"
     android:paddingStart="5dp"
     android:paddingLeft="5dp"
     android:paddingTop="5dp"
@@ -21,33 +22,38 @@
 
     <LinearLayout
         android:id="@+id/itemLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/prodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
 
         <ImageView
             android:id="@+id/ShopProductImage"
             android:layout_width="170dp"
-            android:layout_height="175dp"
+            android:layout_height="170dp"
             android:layout_weight="1"
+            android:scaleType="centerCrop"
             tools:src="@sample/drawable" />
-
-        <TextView
-            android:id="@+id/itemName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:gravity="center"
-            android:textAppearance="?attr/textAppearanceListItem" />
 
         <TextView
             android:id="@+id/itemPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
             android:gravity="center"
             android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview" />
 
     </LinearLayout>
 
