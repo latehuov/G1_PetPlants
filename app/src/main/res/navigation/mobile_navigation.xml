@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_shop">
+    app:startDestination="@+id/navigation_Shop">
 
     <fragment
-        android:id="@+id/navigation_shop"
+        android:id="@+id/navigation_Shop"
         android:name="pet.plants.ui.shop.shopItemFragment"
-        android:label="@string/title_home"
+        android:label="Shop"
         tools:layout="@layout/activity_shop_list" />
 
 </navigation>

@@ -38,6 +38,25 @@ private lateinit var auth: FirebaseAuth
 private var currentUser: FirebaseUser? = null
     //lateinit var toolbar : ActionBar
 
+    /*          README
+
+               to add your view (fragment) into bottomnav,
+
+               1)create a package into ui folder
+               package should contain the following:
+               a)Your fragment (generates view, gets data)
+               b)Your adapter (bind data to view)
+
+               2)copy - paste fragment code in R.navigation.mobile_navigation.xml
+               with your fragments data
+
+               3) add layout files needed into r.layout
+
+               4)add your id from mobile_navigation.xml into line 70 of this file
+     */
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -69,30 +88,7 @@ private var currentUser: FirebaseUser? = null
             login()
         }*/
     }
-/*
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener {item ->
-        when(item.itemId){
-            R.id.navigation_Shop -> {
-                toolbar.title = "Shop"
-                val launchfrag = ShopFragment.newInstance()
-                openFragment(launchfrag)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_Cart -> {
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_Login -> {
-                return@OnNavigationItemSelectedListener true
-            }
-        }
-        false
-    }
-    private fun openFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }*/
+
 
 
     fun login(){
