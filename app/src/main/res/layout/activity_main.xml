@@ -10,115 +10,17 @@
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="87dp"
-        android:background="@drawable/not_so_round"
-        android:orientation="vertical"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Log In"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/black" />
-
-        <EditText
-
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar_login"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:drawablePadding="10dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:paddingBottom="20dp">
-
-
-        </EditText>
-
-
-        <EditText
-
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/email"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginRight="20dp"
-            android:drawablePadding="10dp"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:paddingBottom="20dp" />
-
-        <TextView
-
-            android:id="@+id/forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/password"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:text="@string/forgot_password"
-
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-
-        <Button
-
-            android:id="@+id/login_button"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/register_button"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/kinda_round"
-            android:enabled="true"
-            android:text="Log In"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="20dp"
-
-            app:backgroundTint="#66a366" />
-
-
-        <Button
-
-            android:id="@+id/register_button"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/forgot_password"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/kinda_round"
-            android:enabled="true"
-            android:text="Create an account"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="20dp"
-            app:backgroundTint="#66a366" />
-    </LinearLayout>
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/navigationView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigationView"
@@ -129,6 +31,7 @@
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

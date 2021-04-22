@@ -9,7 +9,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-
+import androidx.navigation.ui.setupActionBarWithNavController
 
 
 
@@ -20,6 +20,10 @@ import android.widget.EditText
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBar
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -32,14 +36,23 @@ private lateinit var uname: EditText
 private lateinit var pass: EditText
 private lateinit var auth: FirebaseAuth
 private var currentUser: FirebaseUser? = null
-    lateinit var toolbar : ActionBar
+    //lateinit var toolbar : ActionBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toolbar = supportActionBar!!
-        val bottomnav :BottomNavigationView = findViewById(R.id.navigationView)
 
+        //lasses navigation bullshittery
+        val navView: BottomNavigationView = findViewById(R.id.navigationView)
+
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        val appBarConfiguration = AppBarConfiguration(setOf(
+                R.id.navigation_Shop))   //add id of your nav fragment in mobile_navigation.xml here
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+        //no touchy
+        /*
         auth = Firebase.auth
         uname = findViewById(R.id.email)
         pass = findViewById(R.id.password)
@@ -54,8 +67,33 @@ private var currentUser: FirebaseUser? = null
         val LogIn:Button = findViewById(R.id.login_button)
         LogIn.setOnClickListener {
             login()
-        }
+        }*/
     }
+/*
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener {item ->
+        when(item.itemId){
+            R.id.navigation_Shop -> {
+                toolbar.title = "Shop"
+                val launchfrag = ShopFragment.newInstance()
+                openFragment(launchfrag)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_Cart -> {
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_Login -> {
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
+    private fun openFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }*/
+
 
     fun login(){
        var email = uname.text.toString()

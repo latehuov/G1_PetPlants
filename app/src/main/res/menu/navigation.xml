@@ -2,18 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_songs"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Songs"/>
+        android:id="@+id/navigation_Login"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="LogIn"/>
 
     <item
-        android:id="@+id/navigation_albums"
-        android:icon="@drawable/kinda_round"
-        android:title="Albums"/>
-
+        android:id="@+id/navigation_Shop"
+        android:icon="@drawable/ic_baseline_storefront_24"
+        android:title="Shop"/>
     <item
-        android:id="@+id/navigation_artists"
-        android:icon="@drawable/yetanother_drawable"
-        android:title="Artists"/>
+        android:id="@+id/navigation_Cart"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:title="Cart"/>
 
 </menu>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainDiv"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_marginBottom="50dp"
@@ -22,7 +22,7 @@
 
     <LinearLayout
         android:id="@+id/itemLinearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal"
         android:orientation="vertical">
@@ -36,8 +36,8 @@
 
         <ImageView
             android:id="@+id/ShopProductImage"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:layout_weight="1"
             android:scaleType="centerCrop"
             tools:src="@sample/drawable" />
@@ -53,6 +53,7 @@
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/textview" />
 
     </LinearLayout>

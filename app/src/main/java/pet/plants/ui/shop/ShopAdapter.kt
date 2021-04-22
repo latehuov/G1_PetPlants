@@ -1,12 +1,12 @@
-package pet.plants
+package pet.plants.ui.shop
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import pet.plants.R
 
 class ShopAdapter(val shopitems : ArrayList<ShopItemData>) : RecyclerView.Adapter<ShopAdapter.ViewHolder>() {
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){

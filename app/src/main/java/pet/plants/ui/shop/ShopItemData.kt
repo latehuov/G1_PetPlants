@@ -1,4 +1,4 @@
-package pet.plants
+package pet.plants.ui.shop
 
 data class ShopItemData (val id:String, val name : String, val img: String?, val price :String?, val description :String? = "", val species : String? = ""){
     companion object{
