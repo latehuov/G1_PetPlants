@@ -26,7 +26,7 @@ class ShopAdapter(val shopitems : ArrayList<ShopItemData>) : RecyclerView.Adapte
         holder.img.setImageResource(R.drawable.yetanother_drawable)
         holder.prodname.text = item.name
         holder.price.text = item.price
-        //holder.description.text= item.description
+        holder.description.text= item.description
 
     }
 

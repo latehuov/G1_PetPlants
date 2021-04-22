@@ -25,8 +25,6 @@ class shopItemFragment : Fragment() {
     private lateinit var shopItems : ArrayList<ShopItemData>
     private lateinit var database : DatabaseReference
     private lateinit var RcView : RecyclerView
-    private lateinit var  rcviewAdapter: ShopAdapter
-    private lateinit var itemsListener : ValueEventListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
