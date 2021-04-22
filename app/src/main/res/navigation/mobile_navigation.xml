@@ -11,4 +11,16 @@
         android:label="Shop"
         tools:layout="@layout/activity_shop_list" />
 
+
+    <fragment
+        android:id="@+id/navigation_Login"
+        android:name="pet.plants.ui.login.Login"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/navigation_Register"
+        android:name="pet.plants.ui.login.Register"
+        android:label="Login"
+        tools:layout="@layout/fragment_register" />
 </navigation>
