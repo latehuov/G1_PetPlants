@@ -81,10 +81,8 @@ class Register : Fragment() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
-                            activity?.let{
-                                val intent = Intent (it, Login::class.java)
-                                it.startActivity(intent)
-                            }
+
+                            findNavController().navigate(R.id.navigation_Login)
                         } else {
                             Toast.makeText(mContext, "error" + task.exception,
                                 Toast.LENGTH_SHORT).show()

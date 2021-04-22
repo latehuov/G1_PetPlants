@@ -79,6 +79,7 @@ class Login : Fragment() {
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
                             currentUser = auth.currentUser
+                            findNavController().navigate(R.id.navigation_Login)
 
                         } else {
                             Toast.makeText(mContext, "Oopsie!",
