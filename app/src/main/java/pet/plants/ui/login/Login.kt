@@ -68,6 +68,9 @@ class Login : Fragment() {
         auth = Firebase.auth
 
 
+        if(auth.currentUser != null){
+            findNavController().navigate(R.id.navigation_LoggedIn)
+        }
 
     }
 
@@ -79,7 +82,9 @@ class Login : Fragment() {
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
                             currentUser = auth.currentUser
-                            findNavController().navigate(R.id.navigation_Login)
+                            val intent = Intent(requireContext(), MainActivity::class.java)
+                            intent.putExtra("currentUser", currentUser)
+                            findNavController().navigate(R.id.navigation_LoggedIn)
 
                         } else {
                             Toast.makeText(mContext, "Oopsie!",

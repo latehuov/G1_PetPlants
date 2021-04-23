@@ -5,7 +5,7 @@ import android.app.Fragment
 import androidx.navigation.ui.setupActionBarWithNavController
 
 
-
+import com.google.firebase.auth.FirebaseUser
 
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -35,7 +35,7 @@ class   MainActivity : AppCompatActivity() {
                4)add your id from mobile_navigation.xml into line 70 of this file
      */
 
-
+    var currentUser = intent?.getParcelableExtra<FirebaseUser>("currentUser")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
