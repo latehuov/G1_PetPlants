@@ -18,9 +18,11 @@
     android:paddingRight="5dp"
     android:paddingBottom="5dp"
     app:cardCornerRadius="5dp"
+
     app:cardElevation="10dp">
 
     <LinearLayout
+        android:background="#8cc084"
         android:id="@+id/itemLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +38,7 @@
 
         <ImageView
             android:id="@+id/ShopProductImage"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="300dp"
             android:layout_weight="1"
             android:scaleType="centerCrop"

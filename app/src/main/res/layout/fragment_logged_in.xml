@@ -26,6 +26,13 @@
             android:text="You are logged in!"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            tools:layout_editor_absoluteX="177dp"
+            tools:layout_editor_absoluteY="291dp" />
 
 
 
