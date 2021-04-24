@@ -2,6 +2,7 @@ package pet.plants
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.Fragment
+import android.widget.Toast
 import androidx.navigation.ui.setupActionBarWithNavController
 
 
@@ -11,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 
 
@@ -35,11 +37,12 @@ class   MainActivity : AppCompatActivity() {
                4)add your id from mobile_navigation.xml into line 70 of this file
      */
 
-    var currentUser = intent?.getParcelableExtra<FirebaseUser>("currentUser")
+    var UserEmail = intent?.getStringExtra("UserEmail")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         //lasses navigation bullshittery
         val navView: BottomNavigationView = findViewById(R.id.navigationView)
@@ -60,6 +63,7 @@ class   MainActivity : AppCompatActivity() {
             .replace(R.id.container, fragment)
             .commit();
     }
+
 
 
 

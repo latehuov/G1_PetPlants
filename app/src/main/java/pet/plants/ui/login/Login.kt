@@ -30,7 +30,13 @@ class Login : Fragment() {
     private var currentUser: FirebaseUser? = null
      var mContext : Context? = null
 
+
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+
+
         val view = inflater.inflate(R.layout.fragment_login, container, false)
         uname = view.findViewById(R.id.email)
         pass = view.findViewById(R.id.password)
@@ -82,8 +88,10 @@ class Login : Fragment() {
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
                             currentUser = auth.currentUser
+                            val UserEmail = auth.currentUser.email
+
                             val intent = Intent(requireContext(), MainActivity::class.java)
-                            intent.putExtra("currentUser", currentUser)
+                            intent.putExtra("UserEmail", UserEmail)
                             findNavController().navigate(R.id.navigation_LoggedIn)
 
                         } else {

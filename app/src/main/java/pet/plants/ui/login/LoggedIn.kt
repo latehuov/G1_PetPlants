@@ -39,9 +39,11 @@ class LoggedIn : Fragment() {
         }
 
         val intent = Intent(requireContext(), MainActivity::class.java)
-        val currentUser = intent.getParcelableExtra<FirebaseUser>("currentUser")
-        email1.text = currentUser?.toString()
+        val UserEmail = intent.getStringExtra("UserEmail")
+        email1.text = UserEmail.toString()
 
+        Toast.makeText(mContext, UserEmail.toString(),
+                Toast.LENGTH_SHORT).show()
 
         return view
     }
