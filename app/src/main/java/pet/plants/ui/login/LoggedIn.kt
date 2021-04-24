@@ -19,11 +19,14 @@ import pet.plants.MainActivity
 import pet.plants.R
 import android.annotation.SuppressLint
 import android.widget.TextView
+import androidx.navigation.NavArgs
+import androidx.navigation.fragment.navArgs
 
 
 class LoggedIn : Fragment() {
     private lateinit var email1: TextView
     private lateinit var logoutButton: Button
+    val args : LoggedInArgs by navArgs()
     var mContext : Context? = null
 
 
@@ -38,11 +41,10 @@ class LoggedIn : Fragment() {
             findNavController().navigate(R.id.navigation_Login)
         }
 
-        val intent = Intent(requireContext(), MainActivity::class.java)
-        val UserEmail = intent.getStringExtra("UserEmail")
-        email1.text = UserEmail.toString()
 
-        Toast.makeText(mContext, UserEmail.toString(),
+        email1.text = args.UserEmail
+
+        Toast.makeText(mContext,  args.UserEmail,
                 Toast.LENGTH_SHORT).show()
 
         return view

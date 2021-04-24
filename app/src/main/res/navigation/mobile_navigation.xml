@@ -16,7 +16,11 @@
         android:id="@+id/navigation_Login"
         android:name="pet.plants.ui.login.Login"
         android:label="Login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigation_Login_to_navigation_LoggedIn"
+            app:destination="@id/navigation_LoggedIn" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_Register"
@@ -28,5 +32,9 @@
         android:id="@+id/navigation_LoggedIn"
         android:name="pet.plants.ui.login.LoggedIn"
         android:label="Login"
-        tools:layout="@layout/fragment_logged_in" />
+        tools:layout="@layout/fragment_logged_in" >
+        <argument
+            android:name="UserEmail"
+            app:argType="string" />
+    </fragment>
 </navigation>

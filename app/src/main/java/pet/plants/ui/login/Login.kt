@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
+import android.drm.DrmStore
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -89,10 +90,8 @@ class Login : Fragment() {
                         if (task.isSuccessful) {
                             currentUser = auth.currentUser
                             val UserEmail = auth.currentUser.email
-
-                            val intent = Intent(requireContext(), MainActivity::class.java)
-                            intent.putExtra("UserEmail", UserEmail)
-                            findNavController().navigate(R.id.navigation_LoggedIn)
+                            val Action = LoginDirections.actionNavigationLoginToNavigationLoggedIn(UserEmail)
+                            findNavController().navigate(Action)
 
                         } else {
                             Toast.makeText(mContext, "Oopsie!",
