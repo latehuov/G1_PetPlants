@@ -8,9 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 
-/**
- * Created by Jaison on 27/05/17.
- */
+
 class CreditCardFormattingTextWatcher : TextWatcher {
     private var etCard: EditText
     private var tvCard: TextView? = null
