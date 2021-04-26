@@ -35,6 +35,16 @@
         tools:layout="@layout/fragment_logged_in" >
         <argument
             android:name="UserEmail"
+            app:argType="string"
+            android:defaultValue="testuser@smth.com" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_pts"
+        android:name="pet.plants.ui.pts.Plant_troubleshooting"
+        android:label="pts"
+        tools:layout="@layout/fragment_plant_troubleshooting" >
+        <argument
+            android:name="UserEmail"
             app:argType="string" />
     </fragment>
 </navigation>

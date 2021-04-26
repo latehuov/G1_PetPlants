@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="550dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
 
         android:background="@drawable/not_so_round"
         android:orientation="vertical">
@@ -23,7 +23,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="00dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="Register"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -75,27 +75,15 @@
             android:inputType="textPassword"
             android:paddingBottom="20dp" />
 
-        <TextView
 
-            android:id="@+id/forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/password"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:text="Forgot Password"
-
-            android:textColor="@color/black"
-            android:textSize="15dp" />
 
         <Button
 
             android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/forgot_password"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="120dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/kinda_round"
             android:enabled="true"

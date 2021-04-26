@@ -26,6 +26,7 @@ import androidx.navigation.fragment.navArgs
 class LoggedIn : Fragment() {
     private lateinit var email1: TextView
     private lateinit var logoutButton: Button
+    private lateinit var pts_button: Button
     val args : LoggedInArgs by navArgs()
     var mContext : Context? = null
 
@@ -35,17 +36,25 @@ class LoggedIn : Fragment() {
         val view = inflater.inflate(R.layout.fragment_logged_in, container, false)
         email1 = view.findViewById(R.id.email)
         logoutButton = view.findViewById(R.id.logout)
+        pts_button = view.findViewById(R.id.go_to_pts)
 
         logoutButton.setOnClickListener{
             signOut(view)
             findNavController().navigate(R.id.navigation_Login)
         }
+        pts_button.setOnClickListener{
+            findNavController().navigate(R.id.navigation_pts)
+        }
 
+        if (args.UserEmail.isNotEmpty()) {
+            email1.text = args.UserEmail
+        }
+        else if (args.UserEmail == "testuser@smth.com"){
+            signOut(view)
+            findNavController().navigate(R.id.navigation_Login)
+        }
 
-        email1.text = args.UserEmail
-
-        Toast.makeText(mContext,  args.UserEmail,
-                Toast.LENGTH_SHORT).show()
+        
 
         return view
     }
@@ -72,6 +81,8 @@ class LoggedIn : Fragment() {
         FirebaseAuth.getInstance().signOut()
         email1.text = ""
     }
+
+
 
 
 

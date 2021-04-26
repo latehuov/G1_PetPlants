@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="600dp"
-
+        android:layout_marginBottom="40dp"
         android:background="@drawable/not_so_round"
         android:orientation="vertical">
 
@@ -27,16 +27,33 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/black" />
         <TextView
+            android:gravity="center"
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
+            android:textSize="16dp"
             tools:layout_editor_absoluteX="177dp"
             tools:layout_editor_absoluteY="291dp" />
 
 
 
+        <Button
 
+            android:id="@+id/go_to_pts"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/kinda_round"
+            android:enabled="true"
+            android:text="Ask for help!"
+            android:onClick="gotopts"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            app:backgroundTint="#66a366" />
 
 
 
@@ -58,6 +75,7 @@
             android:textColor="#000000"
             android:textSize="20dp"
             app:backgroundTint="#66a366" />
+
 
 
     </LinearLayout>

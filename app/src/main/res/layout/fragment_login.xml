@@ -9,8 +9,8 @@
     android:background="#7c98b3"
     android:gravity="center"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    >
 
+    >
 <LinearLayout
     android:id="@+id/linearLayout2"
     android:layout_width="0dp"
@@ -112,6 +112,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/kinda_round"
         android:enabled="true"
         android:text="Create an account"

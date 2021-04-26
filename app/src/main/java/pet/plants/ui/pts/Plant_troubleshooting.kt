@@ -18,6 +18,7 @@ import android.util.Log
 import android.app.AlertDialog
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
@@ -31,6 +32,7 @@ class Plant_troubleshooting : Fragment() {
 
 
     private lateinit var btn_upload: Button
+    private lateinit var btn_back: Button
     private lateinit var image_view: ImageView
     private lateinit var diagnosys: TextView
     lateinit var alertDialog: AlertDialog
@@ -50,15 +52,18 @@ class Plant_troubleshooting : Fragment() {
                 if (!task.isSuccessful) {
                     Toast.makeText(mContext, "Failed", Toast.LENGTH_SHORT).show()
                 }
-                storageReference!!.downloadUrl
-            }.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
+                else{
                     val downloadUrl = task.result
                     val url = downloadUrl!!.toString()
                     Log.d("DIRECTLINK", url)
                     alertDialog.dismiss()
                     Picasso.get().load(url).into(image_view)
                     diagnosys.setText("Your plant looks good and well! Nothing to worry about!")
+                }
+                storageReference!!.downloadUrl
+            }.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+
                 }
             }
         }
@@ -69,6 +74,7 @@ class Plant_troubleshooting : Fragment() {
         val view = inflater.inflate(R.layout.fragment_plant_troubleshooting, container, false)
             image_view = view.findViewById(R.id.imageviv)
             btn_upload = view.findViewById(R.id.upload)
+            btn_back = view.findViewById(R.id.back)
             diagnosys = view.findViewById(R.id.diagnosis)
             alertDialog = SpotsDialog.Builder().setContext(mContext).build();
             storageReference = FirebaseStorage.getInstance().getReference("image_upload")
@@ -79,6 +85,9 @@ class Plant_troubleshooting : Fragment() {
                 intent.type = "image/*"
                 intent.action = Intent.ACTION_GET_CONTENT
                 startActivityForResult(Intent.createChooser(intent, "select picture"), PICK_IMAGE_CODE)
+            }
+            btn_back.setOnClickListener(){
+                findNavController().navigate(R.id.navigation_LoggedIn)
             }
         return view
 
