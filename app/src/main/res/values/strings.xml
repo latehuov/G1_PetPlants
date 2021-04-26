@@ -19,4 +19,17 @@
     <string name="hello_world">Hello Square World!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="payment_fragment">Payment_test</string>
+    <string name="buy_now">Buy Now!</string>
+    <string name="payment">Payment</string>
+    <string name="card_number">Card Number</string>
+    <string name="name_on_the_card">Name on the Card</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="cvv">CVV</string>
+    <string name="credit_card_billing_address_is_the_same_as_invoice">Credit Card Billing Address is the same as Invoice</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="address_line_2">Address Line 2</string>
+    <string name="city">City</string>
+    <string name="postal_zip_code">Postal/ZIP Code</string>
 </resources>
