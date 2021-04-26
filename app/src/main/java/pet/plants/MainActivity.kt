@@ -2,6 +2,7 @@ package pet.plants
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.Fragment
+import android.view.View
 import android.widget.Toast
 import androidx.navigation.ui.setupActionBarWithNavController
 
@@ -12,8 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
-
+import pet.plants.ui.payment.payment
 
 
 class   MainActivity : AppCompatActivity() {
@@ -63,10 +63,6 @@ class   MainActivity : AppCompatActivity() {
             .replace(R.id.container, fragment)
             .commit();
     }
-
-
-
-
 
 
 }

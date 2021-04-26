@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_Shop">
+    app:startDestination="@+id/navigation_Login">
 
     <fragment
         android:id="@+id/navigation_Shop"
@@ -47,4 +47,11 @@
             android:name="UserEmail"
             app:argType="string" />
     </fragment>
+        tools:layout="@layout/fragment_logged_in" />
+
+    <fragment
+        android:id="@+id/navigation_payment"
+        android:name="pet.plants.ui.payment.payment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment" />
 </navigation>
