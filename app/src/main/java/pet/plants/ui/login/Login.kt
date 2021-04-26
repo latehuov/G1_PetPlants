@@ -90,6 +90,11 @@ class Login : Fragment() {
                         if (task.isSuccessful) {
                             currentUser = auth.currentUser
                             val UserEmail = auth.currentUser.email
+                            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)?: return@addOnCompleteListener
+                            with(sharedPref.edit()){
+                                putString("savedEmail", UserEmail)
+                                apply()
+                            }
                             val Action = LoginDirections.actionNavigationLoginToNavigationLoggedIn(UserEmail)
                             findNavController().navigate(Action)
 
@@ -107,6 +112,7 @@ class Login : Fragment() {
 
 
     }
+
 
     companion object {
         fun newInstance(): Login {

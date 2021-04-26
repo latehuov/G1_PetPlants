@@ -2,6 +2,8 @@ package pet.plants
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.Fragment
+import android.content.Context
+import android.content.SharedPreferences
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.NavController
@@ -16,6 +18,8 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import pet.plants.ui.payment.payment
+
+
 
 
 class   MainActivity : AppCompatActivity() {
@@ -39,12 +43,17 @@ class   MainActivity : AppCompatActivity() {
                4)add your id from mobile_navigation.xml into line 70 of this file
      */
 
+    val PREFS_NAME = "MyPrefsFile"
+
     lateinit var navController: NavController
     var UserEmail = intent?.getStringExtra("UserEmail")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val sharedPref = getPreferences(Context.MODE_PRIVATE)?:return
+        val email = sharedPref.getString("savedEmail",null)
 
 
         //lasses navigation bullshittery

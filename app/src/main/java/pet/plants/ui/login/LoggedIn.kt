@@ -27,6 +27,7 @@ class LoggedIn : Fragment() {
     private lateinit var email1: TextView
     private lateinit var logoutButton: Button
     private lateinit var pts_button: Button
+     var email: String? = null
     val args : LoggedInArgs by navArgs()
     var mContext : Context? = null
 
@@ -46,13 +47,19 @@ class LoggedIn : Fragment() {
             findNavController().navigate(R.id.navigation_pts)
         }
 
-        if (args.UserEmail.isNotEmpty()) {
+
+
+        if (email != null) {
+            email1.text = email
+        }
+        else if (args.UserEmail.isNotEmpty()){
             email1.text = args.UserEmail
         }
         else if (args.UserEmail == "testuser@smth.com"){
             signOut(view)
             findNavController().navigate(R.id.navigation_Login)
         }
+
 
 
 
@@ -74,7 +81,8 @@ class LoggedIn : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)?:return
+         email = sharedPref.getString("savedEmail",null)
     }
 
     fun signOut(view:View){
