@@ -54,7 +54,7 @@ class LoggedIn : Fragment() {
             findNavController().navigate(R.id.navigation_Login)
         }
 
-        
+
 
         return view
     }

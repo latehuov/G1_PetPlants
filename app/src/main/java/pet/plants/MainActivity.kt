@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
 
 
@@ -11,6 +12,7 @@ import com.google.firebase.auth.FirebaseUser
 
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import pet.plants.ui.payment.payment
@@ -37,6 +39,7 @@ class   MainActivity : AppCompatActivity() {
                4)add your id from mobile_navigation.xml into line 70 of this file
      */
 
+    lateinit var navController: NavController
     var UserEmail = intent?.getStringExtra("UserEmail")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,8 +50,9 @@ class   MainActivity : AppCompatActivity() {
         //lasses navigation bullshittery
         val navView: BottomNavigationView = findViewById(R.id.navigationView)
 
-        val navController = findNavController(R.id.nav_host_fragment)
+        navController = findNavController(R.id.nav_host_fragment)
 
+        NavigationUI.setupActionBarWithNavController(this, navController)
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_Login, R.id.navigation_Shop))   //add id of your nav fragment in mobile_navigation.xml here
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -56,7 +60,9 @@ class   MainActivity : AppCompatActivity() {
         //no touchy
 
     }
-
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp()
+    }
     fun changeFragment(fragment:Fragment){
         getFragmentManager()
             .beginTransaction()
