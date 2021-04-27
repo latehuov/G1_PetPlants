@@ -180,6 +180,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/post_code"
                 android:background="@drawable/kinda_round"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                app:backgroundTint="#66a366"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
