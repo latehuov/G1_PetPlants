@@ -57,13 +57,20 @@ class Plant_troubleshooting : Fragment() {
                     val url = downloadUrl!!.toString()
                     Log.d("DIRECTLINK", url)
                     alertDialog.dismiss()
+
                     Picasso.get().load(url).into(image_view)
                     diagnosys.setText("Your plant looks good and well! Nothing to worry about!")
                 }
                 storageReference!!.downloadUrl
             }.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    val downloadUrl = task.result
+                    val url = downloadUrl!!.toString()
+                    Log.d("DIRECTLINK", url)
+                    alertDialog.dismiss()
 
+                    Picasso.get().load(url).into(image_view)
+                    diagnosys.setText("Your plant looks good and well! Nothing to worry about!")
                 }
             }
         }
