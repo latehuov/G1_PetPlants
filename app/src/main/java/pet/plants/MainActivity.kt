@@ -49,8 +49,7 @@ class   MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     val PREFS_NAME = "MyPrefsFile"
 
-    lateinit var navController: NavController
-    var UserEmail = intent?.getStringExtra("UserEmail")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
