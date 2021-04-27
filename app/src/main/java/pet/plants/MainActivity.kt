@@ -49,10 +49,7 @@ class   MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     val PREFS_NAME = "MyPrefsFile"
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 4c0f7453b1a0767bdda5d86514e1833d2c98fea0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
