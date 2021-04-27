@@ -15,6 +15,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/cart"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/productView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,13 +23,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="0dp"
+        android:layout_height="472dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cart_header" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/cart_item" />
 
     <TextView
         android:id="@+id/total_text"
