@@ -3,10 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs.kotlin'
-<<<<<<< HEAD
     id 'kotlin-parcelize'
-=======
->>>>>>> 3d64751bc15e371d7df8c39fe0f51ae14d6d02fd
 }
 
 android {
@@ -72,13 +69,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation platform('com.google.firebase:firebase-bom:27.0.0')
     implementation 'com.google.firebase:firebase-database-ktx'
-<<<<<<< HEAD
-=======
     compileOnly 'com.google.android.wearable:wearable:2.6.0'
 
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-
->>>>>>> 3d64751bc15e371d7df8c39fe0f51ae14d6d02fd
 }
