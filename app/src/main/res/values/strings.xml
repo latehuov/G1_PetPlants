@@ -21,4 +21,29 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="plant_name">Plant name</string>
     <string name="show_plant">Show plant</string>
+
+    <string-array name="plant_names">
+        <item>Prickly Gus</item>
+        <item>Juniper Jones</item>
+        <item>Rosy Randy</item>
+        <item>Trapface</item>
+        <item>Ferny Friend</item>
+        <item>Alone Vera</item>
+    </string-array>
+    <string-array name="plant_species">
+        <item>Cactus</item>
+        <item>Juniper</item>
+        <item>Rose</item>
+        <item>Venus Flytrap</item>
+        <item>Fern</item>
+        <item>Aloe Vera</item>
+    </string-array>
+    <string-array name="plant_descriptions">
+        <item>A pretty cool cactus.</item>
+        <item>A berry bush/tree-thing.</item>
+        <item>The thorns are pretty sharp!</item>
+        <item>Catches insects like the name suggests.</item>
+        <item>A pretty cool looking plant.</item>
+        <item>Keeps the skin smooth and looks delicious! (Spoiler: it isn't.)</item>
+    </string-array>
 </resources>

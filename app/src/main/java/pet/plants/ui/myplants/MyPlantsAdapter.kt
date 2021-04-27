@@ -7,26 +7,34 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pet.plants.R
-import pet.plants.ui.myplants.PlantData
 
-class MyPlantsAdapter(val plants : ArrayList<PlantData>) : RecyclerView.Adapter<MyPlantsAdapter.ViewHolder>() {
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val plantname : TextView = itemView.findViewById(R.id.thePlant)
-        val img : ImageView = itemView.findViewById(R.id.myPlantsPlaceHolder)
+class MyPlantsAdapter(val plantList: Array<String>) :
+        RecyclerView.Adapter<MyPlantsAdapter.PlantViewHolder>() {
+
+    // Describes an item view and its place within the RecyclerView
+    class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val plantTextView: TextView = itemView.findViewById(R.id.plantName)
+
+        fun bind(word: String) {
+            plantTextView.text = word
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.my_plant_item, parent, false)
-        return ViewHolder(view)
+    // Returns a new ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
+        val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.my_plant_item, parent, false)
+
+        return PlantViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = plants[position]
-        holder.img.setImageResource(R.drawable.trauma2)
-        holder.plantname.text = item.name
-
+    // Returns size of data list
+    override fun getItemCount(): Int {
+        return plantList.size
     }
 
-    override fun getItemCount() = plants.size
-
+    // Displays data at a certain position
+    override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
+        holder.bind(plantList[position])
+    }
 }
