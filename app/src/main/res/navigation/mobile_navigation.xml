@@ -59,4 +59,9 @@
         android:name="pet.plants.ui.myplants.MyPlantsFragment"
         android:label="My plants"
         tools:layout="@layout/activity_my_plants" />
+    <fragment
+        android:id="@+id/navigation_plantpage"
+        android:name="pet.plants.ui.myplants.PlantPage"
+        android:label="Plant"
+        tools:layout="@layout/activity_plant_page" />
 </navigation>
