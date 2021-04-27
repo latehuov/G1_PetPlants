@@ -42,6 +42,9 @@ class ShopAdapter(val shopitems : ArrayList<ShopItemData>) : RecyclerView.Adapte
         return ViewHolder(view)
     }
 
+
+
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = filteredList[position]
         holder.mainDiv.setOnClickListener{ view ->

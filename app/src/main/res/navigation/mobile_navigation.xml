@@ -41,6 +41,11 @@
         android:name="pet.plants.ui.login.Register"
         android:label="Login"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/navigation_Cart"
+        android:name="pet.plants.ui.cart.cart"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" />
 
     <fragment
         android:id="@+id/navigation_LoggedIn"
