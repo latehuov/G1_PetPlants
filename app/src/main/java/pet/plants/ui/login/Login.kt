@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
+import android.drm.DrmStore
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -30,7 +31,13 @@ class Login : Fragment() {
     private var currentUser: FirebaseUser? = null
      var mContext : Context? = null
 
+
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+
+
         val view = inflater.inflate(R.layout.fragment_login, container, false)
         uname = view.findViewById(R.id.email)
         pass = view.findViewById(R.id.password)
@@ -68,6 +75,9 @@ class Login : Fragment() {
         auth = Firebase.auth
 
 
+        if(auth.currentUser != null){
+            findNavController().navigate(R.id.navigation_LoggedIn)
+        }
 
     }
 
@@ -79,9 +89,17 @@ class Login : Fragment() {
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
                             currentUser = auth.currentUser
-                            findNavController().navigate(R.id.navigation_Login)
+                            val UserEmail = auth.currentUser.email
+                            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)?: return@addOnCompleteListener
+                            with(sharedPref.edit()){
+                                putString("savedEmail", UserEmail)
+                                apply()
+                            }
+                            val Action = LoginDirections.actionNavigationLoginToNavigationLoggedIn(UserEmail)
+                            findNavController().navigate(Action)
 
                         } else {
+                            
                             Toast.makeText(mContext, "Oopsie!",
                                     Toast.LENGTH_SHORT).show()
                         }
@@ -94,6 +112,7 @@ class Login : Fragment() {
 
 
     }
+
 
     companion object {
         fun newInstance(): Login {

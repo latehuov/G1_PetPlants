@@ -7,17 +7,21 @@ import android.content.Context
 import android.view.Menu
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.content.SharedPreferences
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
 
 
-
+import com.google.firebase.auth.FirebaseUser
 
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import pet.plants.ui.payment.payment
+
 
 
 
@@ -43,10 +47,18 @@ class   MainActivity : AppCompatActivity() {
      */
 
     lateinit var navController: NavController
+    val PREFS_NAME = "MyPrefsFile"
+
+    lateinit var navController: NavController
+    var UserEmail = intent?.getStringExtra("UserEmail")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val sharedPref = getPreferences(Context.MODE_PRIVATE)?:return
+        val email = sharedPref.getString("savedEmail",null)
+
 
         //lasses navigation bullshittery
         val navView: BottomNavigationView = findViewById(R.id.navigationView)

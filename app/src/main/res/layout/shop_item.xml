@@ -18,9 +18,11 @@
     android:paddingRight="5dp"
     android:paddingBottom="5dp"
     app:cardCornerRadius="5dp"
+
     app:cardElevation="10dp">
 
     <LinearLayout
+        android:background="#8cc084"
         android:id="@+id/itemLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,12 +33,16 @@
             android:id="@+id/prodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
 
 
         <ImageView
             android:id="@+id/ShopProductImage"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="300dp"
             android:layout_weight="1"
             android:scaleType="centerCrop"
@@ -54,6 +60,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp"
             android:text="@string/textview" />
 
     </LinearLayout>

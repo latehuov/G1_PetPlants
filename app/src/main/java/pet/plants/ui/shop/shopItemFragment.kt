@@ -128,7 +128,7 @@ class shopItemFragment : Fragment() {
             imm!!.hideSoftInputFromWindow(view!!.windowToken, 0)
         }
     }
-    
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         closeKeyboard()

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_Shop">
+    app:startDestination="@+id/navigation_Login">
 
     <fragment
         android:id="@+id/navigation_Shop"
@@ -30,11 +30,42 @@
         android:id="@+id/navigation_Login"
         android:name="pet.plants.ui.login.Login"
         android:label="Login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigation_Login_to_navigation_LoggedIn"
+            app:destination="@id/navigation_LoggedIn" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_Register"
         android:name="pet.plants.ui.login.Register"
         android:label="Login"
         tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/navigation_LoggedIn"
+        android:name="pet.plants.ui.login.LoggedIn"
+        android:label="Login"
+        tools:layout="@layout/fragment_logged_in" >
+        <argument
+            android:name="UserEmail"
+            app:argType="string"
+            android:defaultValue="testuser@smth.com" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_pts"
+        android:name="pet.plants.ui.pts.Plant_troubleshooting"
+        android:label="pts"
+        tools:layout="@layout/fragment_plant_troubleshooting" >
+        <argument
+            android:name="UserEmail"
+            app:argType="string" />
+    </fragment>
+        tools:layout="@layout/fragment_logged_in" />
+
+    <fragment
+        android:id="@+id/navigation_payment"
+        android:name="pet.plants.ui.payment.payment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment" />
 </navigation>
