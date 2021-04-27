@@ -19,4 +19,12 @@
     <string name="hello_world">Hello Square World!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="sort">sort</string>
+    <string name="sort_price">sort by price</string>
+    <string name="sort_alpha">sort aplhabetically</string>
+    <string name="sort_price_desc">sort by descending price</string>
+    <string name="sort_alpha_za"><![CDATA[sort name Z->A]]></string>
+    <string name="sort_price_asc">sort by ascending price</string>
+    <string name="sort_alpha_az"><![CDATA[sort name A->Z]]></string>
 </resources>

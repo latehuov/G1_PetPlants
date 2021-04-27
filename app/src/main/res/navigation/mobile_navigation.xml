@@ -9,8 +9,22 @@
         android:id="@+id/navigation_Shop"
         android:name="pet.plants.ui.shop.shopItemFragment"
         android:label="Shop"
-        tools:layout="@layout/activity_shop_list" />
-
+        tools:layout="@layout/activity_shop_list" >
+        <action
+            android:id="@+id/action_navigation_Shop_to_navigation_Details"
+            app:destination="@id/navigation_Details"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_Details"
+        android:name="pet.plants.ui.shop.DetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="itemsDataFromShop"
+            app:argType="pet.plants.ui.shop.ShopItemData" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_Login"

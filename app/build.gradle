@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -63,5 +65,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation platform('com.google.firebase:firebase-bom:27.0.0')
     implementation 'com.google.firebase:firebase-database-ktx'
-    compileOnly 'com.google.android.wearable:wearable:2.6.0'
 }
