@@ -63,7 +63,7 @@ class   MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, navController)
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_Login, R.id.navigation_Shop))   //add id of your nav fragment in mobile_navigation.xml here
+            R.id.navigation_Login, R.id.navigation_Shop, R.id.navigation_myplants))   //add id of your nav fragment in mobile_navigation.xml here
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         //no touchy

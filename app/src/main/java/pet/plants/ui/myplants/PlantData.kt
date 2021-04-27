@@ -1,4 +1,4 @@
-package pet.plants.ui.myplants.data
+package pet.plants.ui.myplants
 
 import pet.plants.R
 import pet.plants.ui.myplants.MyPlantsFragment

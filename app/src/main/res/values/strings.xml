@@ -44,7 +44,7 @@
         <item>The thorns are pretty sharp!</item>
         <item>Catches insects like the name suggests.</item>
         <item>A pretty cool looking plant.</item>
-        <item>Keeps the skin smooth and looks delicious! (Spoiler: it isn't.)</item>
+        <item>Keeps the skin smooth and looks delicious! (Spoiler: it is not.)</item>
     </string-array>
 
     <string name="payment_fragment">Payment_test</string>

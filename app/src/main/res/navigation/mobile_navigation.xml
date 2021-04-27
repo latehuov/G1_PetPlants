@@ -54,4 +54,9 @@
         android:name="pet.plants.ui.payment.payment"
         android:label="Payment"
         tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/navigation_myplants"
+        android:name="pet.plants.ui.myplants.MyPlantsFragment"
+        android:label="My plants"
+        tools:layout="@layout/activity_my_plants" />
 </navigation>

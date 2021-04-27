@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pet.plants.R
-import pet.plants.ui.myplants.data.PlantData
 
 
 class MyPlantsFragment : Fragment() {

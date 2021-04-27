@@ -13,10 +13,10 @@ class MyPlantsAdapter(val plantList: Array<String>) :
 
     // Describes an item view and its place within the RecyclerView
     class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val plantTextView: TextView = itemView.findViewById(R.id.plantName)
+        private val plantName: TextView = itemView.findViewById(R.id.plantName)
 
         fun bind(word: String) {
-            plantTextView.text = word
+            plantName.text = word
         }
     }
 

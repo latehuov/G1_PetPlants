@@ -45,7 +45,8 @@
             android:text="@string/show_plant"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/myPlantsPlaceHolder" />
+            app:layout_constraintStart_toEndOf="@+id/myPlantsPlaceHolder"
+            android:onClick="openPlant"/>
 
         <TextView
             android:id="@+id/plantName"
