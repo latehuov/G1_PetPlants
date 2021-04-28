@@ -102,12 +102,13 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/kinda_round"
+
             android:enabled="true"
             android:text="to log In"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textSize="20dp"
+            android:background="@drawable/kinda_round"
             app:backgroundTint="#66a366" />
     </LinearLayout>
 
