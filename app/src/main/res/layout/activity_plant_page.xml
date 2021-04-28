@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="262dp"
+        android:layout_height="335dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/trauma2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plant" />
 
     <TextView
         android:id="@+id/plantPageName"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="30dp"
         android:text="@string/plant_name"
         android:textSize="22sp"

@@ -82,6 +82,12 @@ class Register : Fragment() {
                     .addOnCompleteListener() { task ->
                         if (task.isSuccessful) {
 
+                            val UserEmail = auth.currentUser.email
+                            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)?: return@addOnCompleteListener
+                            with(sharedPref.edit()){
+                                putString("savedEmail", UserEmail)
+                                apply()
+                            }
                             findNavController().navigate(R.id.navigation_Login)
                         } else {
                             Toast.makeText(mContext, "error" + task.exception,
