@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_Shop">
 
+
     <fragment
         android:id="@+id/navigation_Shop"
         android:name="pet.plants.ui.shop.shopItemFragment"
