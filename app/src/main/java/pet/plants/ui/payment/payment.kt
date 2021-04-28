@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import pet.plants.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,8 +51,8 @@ class payment : Fragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_payment, container, false)
@@ -74,38 +75,41 @@ class payment : Fragment() {
         postal_code = view.findViewById(R.id.post_code)
 
         details =
-                arrayOf(
-                        card_name,
-                        number,
-                        expiry_date,
-                        sec_code,
-                        add_1,
-                        add_2,
-                        add_city,
-                        postal_code)
+            arrayOf(
+                card_name,
+                number,
+                expiry_date,
+                sec_code,
+                add_1,
+                add_2,
+                add_city,
+                postal_code
+            )
 
         button_id = view.findViewById(R.id.buy_now)
 
         button_id.setOnClickListener { view ->
 
-                var allGood: Boolean = true
+            var allGood: Boolean = true
 
-                for (i in details) {
-                    if (i.text.isEmpty()) {
-                        Toast.makeText(
-                                view.context, "Field is required!",
-                                Toast.LENGTH_SHORT
-                        ).show()
-                        allGood = false
-                        break
-                    }
-                }
-                if (allGood)
+            for (i in details) {
+                if (i.text.isEmpty()) {
                     Toast.makeText(
-                            view.context, "Order has been sent :)",
-                            Toast.LENGTH_SHORT
+                        view.context, "Field is required!",
+                        Toast.LENGTH_SHORT
                     ).show()
+                    allGood = false
+                    break
+                }
             }
+            if (allGood) {
+                Toast.makeText(
+                    view.context, "Order has been sent :)",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().navigate(R.id.navigation_Shop)
+            }
+        }
 
         return view
     }
