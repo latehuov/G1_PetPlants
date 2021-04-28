@@ -19,8 +19,10 @@ class MyPlantsAdapter(val plantList: ArrayList<PlantData>) :
     lateinit var navController: NavController
 
     class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val plantName: TextView = itemView.findViewById(R.id.plantName)
+        val plantName: TextView = itemView.findViewById(R.id.plantName)
         val plantButton: Button = itemView.findViewById(R.id.plantInfoPage)
+
+
 
     }
 
@@ -44,6 +46,7 @@ class MyPlantsAdapter(val plantList: ArrayList<PlantData>) :
             val action = MyPlantsFragmentDirections.actionNavigationMyplantsToNavigationPlantpage(item)
             navController.navigate(action)
         }
+        holder.plantName.text = item.name
     }
 
 }
