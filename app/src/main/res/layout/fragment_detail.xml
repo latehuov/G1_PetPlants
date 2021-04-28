@@ -8,18 +8,23 @@
     tools:context=".ui.shop.DetailFragment">
 
 
+
     <androidx.cardview.widget.CardView
-        android:layout_width="266dp"
+        android:layout_width="280dp"
         android:layout_height="559dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="#7c98b3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="@drawable/not_so_round"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_margin="2dp">
 
             <TextView
                 android:id="@+id/name"
@@ -27,14 +32,18 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="TextView"
-                android:textSize="18sp"
+
+                android:textSize="20sp"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/detailimage"
-                android:layout_width="wrap_content"
+                android:layout_width="255dp"
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:src="@sample/drawable" />
@@ -53,6 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textSize="18sp"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +107,10 @@
                 android:layout_marginTop="28dp"
                 android:text="Add to cart"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/amount" />
+                app:layout_constraintTop_toBottomOf="@+id/amount"
+                android:background="@drawable/kinda_round"
+                android:textColor="@color/black"
+                app:backgroundTint="#66a366"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

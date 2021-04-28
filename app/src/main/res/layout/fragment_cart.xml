@@ -11,8 +11,8 @@
         android:id="@+id/cart_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="@string/cart"
+        android:textStyle="bold"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/productView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/total"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toBottomOf="@+id/productView" />
@@ -51,6 +52,7 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productView" />
 
@@ -58,10 +60,14 @@
         android:id="@+id/payment_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
         android:text="@string/proceed_to_payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total_text" />
+        app:layout_constraintTop_toBottomOf="@+id/total_text"
+        android:background="@drawable/kinda_round"
+        app:backgroundTint="#66a366"
+        android:textColor="@color/black"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
