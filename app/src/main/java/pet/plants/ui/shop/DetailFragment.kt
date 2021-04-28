@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toolbar
+import android.widget.*
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -93,24 +90,30 @@ class DetailFragment : Fragment() {
 
 
         addToCartButton = view.findViewById(R.id.addToCart)
-        addToCartButton.setOnClickListener { addToCart() }
+        addToCartButton.setOnClickListener {
+            addToCart(it)
+
+        }
 
         return view
     }
 
-    fun addToCart(){
+    fun addToCart(view : View){
         var foo = amount.text.toString().toInt()
         var arraything =ShoppingData(foo, args.itemsDataFromShop)
         if(shoppingCart == null)
                 shoppingCart = arrayListOf(arraything)
         else
             shoppingCart?.add(arraything)
+        Log.d("thibng", "perkele")
+        Toast.makeText(view.context, "Added $foo x ${args.itemsDataFromShop.name} to cart", Toast.LENGTH_SHORT).show()
         var jsonObject = Gson().toJson(shoppingCart)
         val sharedPrefadd = activity?.getPreferences(Context.MODE_PRIVATE)?: return
         with(sharedPrefadd.edit()){
             putString("cartContents", jsonObject)
             apply()
         }
+
     }
 
     companion object {
