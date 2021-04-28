@@ -10,8 +10,8 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="280dp"
-        android:layout_height="559dp"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:cardBackgroundColor="#7c98b3"
@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/not_so_round"
             android:orientation="vertical"
-            android:padding="5dp"
+            android:padding="10dp"
             android:layout_margin="2dp">
 
             <TextView
@@ -38,12 +38,11 @@
 
             <ImageView
                 android:id="@+id/detailimage"
-                android:layout_width="255dp"
+                android:layout_width="330dp"
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:src="@sample/drawable" />
@@ -72,7 +71,7 @@
                 android:id="@+id/amount"
                 android:layout_width="60dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="108dp"
+                android:layout_marginStart="135dp"
                 android:layout_marginTop="36dp"
                 android:gravity="center"
                 android:text="1"
@@ -103,7 +102,7 @@
                 android:id="@+id/addToCart"
                 android:layout_width="148dp"
                 android:layout_height="47dp"
-                android:layout_marginStart="64dp"
+                android:layout_marginStart="96dp"
                 android:layout_marginTop="28dp"
                 android:text="Add to cart"
                 app:layout_constraintStart_toStartOf="parent"
