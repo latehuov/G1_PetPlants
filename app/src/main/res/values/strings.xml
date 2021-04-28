@@ -45,7 +45,7 @@
     <string name="proceed_to_payment">Proceed to Payment</string>
     <string name="discount_code">Discount Code</string>
     <string name="item_picture">item picture</string>
-    <string name="plant_name">Plant species</string>
+    <string name="plant_name">Plant name</string>
     <string name="plant_species">Plant species</string>
     <string name="plant_description">Plant description</string>
     <string name="show_plant">Show plant</string>
