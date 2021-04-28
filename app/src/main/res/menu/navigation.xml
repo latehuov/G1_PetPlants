@@ -14,5 +14,9 @@
         android:id="@+id/navigation_Cart"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="Cart"/>
+    <item
+        android:id="@+id/navigation_myplants"
+        android:icon="@drawable/ic_baseline_grass_24"
+        android:title="My plants"/>
 
 </menu>

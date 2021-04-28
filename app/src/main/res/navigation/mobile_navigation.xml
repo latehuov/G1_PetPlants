@@ -74,4 +74,21 @@
         android:name="pet.plants.ui.payment.payment"
         android:label="Payment"
         tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/navigation_myplants"
+        android:name="pet.plants.ui.myplants.MyPlantsFragment"
+        android:label="My plants"
+        tools:layout="@layout/activity_my_plants" >
+        <action
+            android:id="@+id/action_navigation_myplants_to_navigation_plantpage"
+            app:destination="@id/navigation_plantpage" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_plantpage"
+        android:name="pet.plants.ui.myplants.PlantPage"
+        android:label="Plant"
+        tools:layout="@layout/activity_plant_page" >
+        <argument android:name="oneplant"
+            app:argType="pet.plants.ui.myplants.PlantData" />
+    </fragment>
 </navigation>

@@ -1,0 +1,40 @@
+{
+  "plants": [
+    {
+      "id": 1,
+      "name": "Prickly Gus",
+      "species": "Cactus",
+      "description": "Prickly bastard."
+    },
+    {
+      "id": 2,
+      "name": "Juniper Jones",
+      "species": "Juniper",
+      "description": "A berry bush/tree-thing."
+    },
+    {
+      "id": 3,
+      "name": "Rosy Randy",
+      "species": "Rose",
+      "description": "Careful with the thorns."
+    },
+    {
+      "id": 4,
+      "name": "Trapface",
+      "species": "Venus Flytrap",
+      "description": "Eats bugs as the name suggests."
+    },
+    {
+      "id": 5,
+      "name": "Ferny Friend",
+      "species": "Fern",
+      "description": "Right from the dinosaur age!"
+    },
+    {
+      "id": 6,
+      "name": "Alone Vera",
+      "species": "Aloe vera",
+      "description": "Makes your skin smooth and looks delicious, but isn't."
+    }
+  ]
+}
