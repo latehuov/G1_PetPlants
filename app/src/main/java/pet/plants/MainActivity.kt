@@ -1,10 +1,13 @@
 package pet.plants
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.Fragment
 import android.content.Context
-import android.content.SharedPreferences
+import android.view.Menu
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.content.SharedPreferences
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -43,10 +46,10 @@ class   MainActivity : AppCompatActivity() {
                4)add your id from mobile_navigation.xml into line 70 of this file
      */
 
+    lateinit var navController: NavController
     val PREFS_NAME = "MyPrefsFile"
 
-    lateinit var navController: NavController
-    var UserEmail = intent?.getStringExtra("UserEmail")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,24 +63,25 @@ class   MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = findViewById(R.id.navigationView)
 
         navController = findNavController(R.id.nav_host_fragment)
-
-        NavigationUI.setupActionBarWithNavController(this, navController)
+            NavigationUI.setupActionBarWithNavController(this, navController)
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_Login, R.id.navigation_Shop, R.id.navigation_myplants))   //add id of your nav fragment in mobile_navigation.xml here
+            R.id.navigation_Login, R.id.navigation_Shop, R.id.navigation_Cart))   //add id of your nav fragment in mobile_navigation.xml here
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         //no touchy
 
     }
+
     override fun onSupportNavigateUp(): Boolean {
+        closeKeyboard()
         return navController.navigateUp()
     }
-    fun changeFragment(fragment:Fragment){
-        getFragmentManager()
-            .beginTransaction()
-            .replace(R.id.container, fragment)
-            .commit();
+    fun closeKeyboard() {
+
+        val view = currentFocus
+        if (view != null) {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+            imm!!.hideSoftInputFromWindow(view!!.windowToken, 0)
+        }
     }
-
-
 }
