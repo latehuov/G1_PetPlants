@@ -44,4 +44,5 @@
     <string name="total">Total: €</string>
     <string name="proceed_to_payment">Proceed to Payment</string>
     <string name="discount_code">Discount Code</string>
+    <string name="item_picture">item picture</string>
 </resources>
