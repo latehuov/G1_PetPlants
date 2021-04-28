@@ -11,8 +11,8 @@
     android:fillViewport="true"
     android:gravity="center"
 
-    tools:context=".MainActivity">
-
+    tools:context=".ui.payment.payment"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

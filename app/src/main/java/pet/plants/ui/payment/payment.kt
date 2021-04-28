@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import pet.plants.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -105,6 +106,7 @@ class payment : Fragment() {
                             view.context, "Order has been sent :)",
                             Toast.LENGTH_SHORT
                     ).show()
+            findNavController().navigate(R.id.navigation_Shop)
             }
 
         return view
