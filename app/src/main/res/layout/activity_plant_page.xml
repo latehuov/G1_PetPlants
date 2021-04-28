@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/plantPopupName"
+        android:id="@+id/plantPageName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <TextView
-        android:id="@+id/plantPopupSpecies"
+        android:id="@+id/plantPageSpecies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.605" />
 
     <TextView
-        android:id="@+id/plantPopupDescription"
+        android:id="@+id/plantPagepDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

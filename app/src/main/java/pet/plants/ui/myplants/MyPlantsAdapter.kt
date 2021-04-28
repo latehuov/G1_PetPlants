@@ -1,30 +1,34 @@
 package pet.plants.ui.myplants
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import pet.plants.R
+import java.io.IOException
 
-class MyPlantsAdapter(val plantList: Array<String>) :
+class MyPlantsAdapter(val plantList: ArrayList<PlantData>) :
         RecyclerView.Adapter<MyPlantsAdapter.PlantViewHolder>() {
 
-    // Describes an item view and its place within the RecyclerView
+    lateinit var navController: NavController
+
     class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val plantName: TextView = itemView.findViewById(R.id.plantName)
+        val plantButton: Button = itemView.findViewById(R.id.plantInfoPage)
 
-        fun bind(word: String) {
-            plantName.text = word
-        }
     }
 
     // Returns a new ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.my_plant_item, parent, false)
-
+        navController = parent.findNavController()
         return PlantViewHolder(view)
     }
 
@@ -35,6 +39,11 @@ class MyPlantsAdapter(val plantList: Array<String>) :
 
     // Displays data at a certain position
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
-        holder.bind(plantList[position])
+        val item = plantList[position]
+        holder.plantButton.setOnClickListener{
+            val action = MyPlantsFragmentDirections.actionNavigationMyplantsToNavigationPlantpage(item)
+            navController.navigate(action)
+        }
     }
+
 }

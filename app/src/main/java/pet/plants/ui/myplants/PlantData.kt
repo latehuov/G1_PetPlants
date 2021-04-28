@@ -1,19 +1,22 @@
 package pet.plants.ui.myplants
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import pet.plants.R
 import pet.plants.ui.myplants.MyPlantsFragment
+import pet.plants.ui.shop.ShopItemData
 
-class PlantData(val context: MyPlantsFragment) {
-    fun getPlantList(): Array<String> {
-        // Return plant name list from string resources
-        return context.resources.getStringArray(R.array.plant_names)
-    }
-    fun getPlantSpecies(): Array<String> {
-        // Return plant species list from string resources
-        return context.resources.getStringArray(R.array.plant_species)
-    }
-    fun getPlantDescription(): Array<String> {
-        // Return plant species list from string resources
-        return context.resources.getStringArray(R.array.plant_descriptions)
+@Parcelize
+data class PlantData(val id: String, val name: String, val species: String, val description: String?): Parcelable{
+    companion object{
+        fun from(map: MutableMap<String, String>)= object  {
+            val id by map
+            val name by map
+            val description by map
+            val species by map
+            val data = PlantData(id, name, description, species)
+        }.data
     }
 }
+
+
