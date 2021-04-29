@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.content.SharedPreferences
+import android.util.Log
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -57,20 +58,39 @@ class   MainActivity : AppCompatActivity() {
 
         val sharedPref = getPreferences(Context.MODE_PRIVATE)?:return
         val email = sharedPref.getString("savedEmail",null)
-
+        Log.d("email", email.toString())
 
         //lasses navigation bullshittery
-        val navView: BottomNavigationView = findViewById(R.id.navigationView)
+        var navView: BottomNavigationView = findViewById(R.id.navigationView)
 
+        if(email == null)
+        {
+            navView.menu.clear()
+            navView.inflateMenu(R.menu.navigationnotin)
+        }
+        else
+        {
+            navView.menu.clear()
+            navView.inflateMenu(R.menu.navigation)
+        }
+
+        var appBarConfiguration : AppBarConfiguration
         navController = findNavController(R.id.nav_host_fragment)
             NavigationUI.setupActionBarWithNavController(this, navController)
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_Login, R.id.navigation_Shop, R.id.navigation_Cart, R.id.navigation_myplants))   //add id of your nav fragment in mobile_navigation.xml here
+
+        appBarConfiguration = if(email == null){
+            AppBarConfiguration(setOf(
+                R.id.navigation_Login, R.id.navigation_Shop, R.id.navigation_Cart))   //add id of your nav fragment in mobile_navigation.xml here
+        } else{
+            AppBarConfiguration(setOf(
+                R.id.navigation_Login, R.id.navigation_Shop, R.id.navigation_Cart, R.id.navigation_myplants))   //add id of your nav fragment in mobile_navigation.xml here
+        }
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         //no touchy
 
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         closeKeyboard()

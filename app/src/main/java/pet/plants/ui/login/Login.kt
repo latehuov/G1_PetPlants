@@ -1,24 +1,22 @@
 package pet.plants.ui.login
 
 import android.content.Context
-import android.os.Bundle
-import android.widget.Button
 import android.content.Intent
-import android.drm.DrmStore
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import pet.plants.MainActivity
 import pet.plants.R
-import pet.plants.ui.shop.shopItemFragment
 
 
 class Login : Fragment() {
@@ -34,7 +32,11 @@ class Login : Fragment() {
 
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
 
 
@@ -95,19 +97,23 @@ class Login : Fragment() {
                                 putString("savedEmail", UserEmail)
                                 apply()
                             }
-                            val Action = LoginDirections.actionNavigationLoginToNavigationLoggedIn(UserEmail)
-                            findNavController().navigate(Action)
+                            val intent = Intent(context, MainActivity::class.java)
+                            startActivity(intent)
 
                         } else {
                             
-                            Toast.makeText(mContext, "Oopsie!",
-                                    Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                mContext, "Oopsie!",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
         }
         else{
-            Toast.makeText(mContext, "email or password is empty!",
-                    Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                mContext, "email or password is empty!",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
 

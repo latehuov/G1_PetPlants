@@ -88,6 +88,13 @@ class LoggedIn : Fragment() {
     fun signOut(view:View){
         FirebaseAuth.getInstance().signOut()
         email1.text = ""
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)?: return
+        with(sharedPref.edit()){
+            putString("savedEmail",null)
+            apply()
+        }
+        val intent = Intent(context, MainActivity::class.java)
+        startActivity(intent)
     }
 
 
