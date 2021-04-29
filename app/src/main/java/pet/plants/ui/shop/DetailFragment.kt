@@ -19,6 +19,7 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable.Class
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.squareup.picasso.Picasso
 import org.w3c.dom.Text
 import pet.plants.MainActivity
 import pet.plants.R
@@ -66,7 +67,7 @@ class DetailFragment : Fragment() {
         itemname = view.findViewById(R.id.name)
         itemname.text = args.itemsDataFromShop.name
         image = view.findViewById(R.id.detailimage)
-        image.setImageResource(R.drawable.yetanother_drawable)
+        Picasso.get().load(args.itemsDataFromShop.img).into(image)
         desc = view.findViewById(R.id.detailDesc)
         desc.text = args.itemsDataFromShop.description
         detailPrice = view.findViewById(R.id.descPrice)

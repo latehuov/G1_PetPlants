@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import pet.plants.R
 import java.io.IOException
 
@@ -21,6 +22,7 @@ class MyPlantsAdapter(val plantList: ArrayList<PlantData>) :
     class PlantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val plantName: TextView = itemView.findViewById(R.id.plantName)
         val plantButton: Button = itemView.findViewById(R.id.plantInfoPage)
+        val img : ImageView = itemView.findViewById(R.id.myPlantsPlaceHolder)
 
 
 
@@ -47,6 +49,7 @@ class MyPlantsAdapter(val plantList: ArrayList<PlantData>) :
             navController.navigate(action)
         }
         holder.plantName.text = item.name
+        Picasso.get().load(item.img).into(holder.img)
     }
 
 }

@@ -30,6 +30,7 @@
             android:id="@+id/myPlantsPlaceHolder"
             android:layout_width="115dp"
             android:layout_height="109dp"
+            android:cropToPadding="false"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

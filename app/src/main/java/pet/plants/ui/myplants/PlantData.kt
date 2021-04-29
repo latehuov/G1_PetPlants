@@ -7,14 +7,15 @@ import pet.plants.ui.myplants.MyPlantsFragment
 import pet.plants.ui.shop.ShopItemData
 
 @Parcelize
-data class PlantData(val id: String, val name: String, val species: String, val description: String?): Parcelable{
+data class PlantData(val id: String, val name: String, val species: String, val description: String?, val img: String): Parcelable{
     companion object{
         fun from(map: MutableMap<String, String>)= object  {
             val id by map
             val name by map
             val description by map
             val species by map
-            val data = PlantData(id, name, description, species)
+            val img by map
+            val data = PlantData(id, name, description, species, img)
         }.data
     }
 }

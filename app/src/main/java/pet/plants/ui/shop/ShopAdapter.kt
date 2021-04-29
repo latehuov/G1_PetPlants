@@ -12,6 +12,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import pet.plants.MainActivity
 import pet.plants.R
 
@@ -51,7 +52,7 @@ class ShopAdapter(val shopitems : ArrayList<ShopItemData>) : RecyclerView.Adapte
             val action = shopItemFragmentDirections.actionNavigationShopToNavigationDetails(item)
             navController.navigate(action)
         }
-        holder.img.setImageResource(R.drawable.yetanother_drawable)
+        Picasso.get().load(item.img).into(holder.img)
         holder.prodname.text = item.name
         holder.price.text = item.price
         holder.description.text= item.description
